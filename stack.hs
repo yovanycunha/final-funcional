@@ -29,7 +29,7 @@ pushAll xs (Stack ys) = Stack (reverse xs ++ ys)
 -- Return the first element of the stack
 peek :: Stack a -> a
 peek (Stack []) = error "Pilha vazia"
-peek (Stack xs) = head xs 
+peek (Stack xs) = last xs 
 
 -- Remove the first element of the stack
 -- and returns a tuple with the removed
