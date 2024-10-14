@@ -51,13 +51,13 @@ removeAll (Stack xs) = Stack []
 -- if the element is not in the stack, return -1
 search :: Eq a => a -> Stack a -> Int
 search y (Stack []) = -1
-search y (Stack (x:xs)) = search' y (Stack (x:xs)) 0
+search y (Stack xs) = search' y (Stack xs) 0
 
 search' :: Eq a => a -> Stack a -> Int -> Int
 search' y (Stack []) _ = -1
-search' y (Stack (x:xs)) i
-    | y == x = i
-    | otherwise = search' y (Stack xs) (i+1)
+search' y (Stack xs) i
+    | y == last xs = i
+    | otherwise = search' y (Stack (init xs)) (i+1)
 
 -- Return the number of elements in the stack
 size :: Stack a -> Int
