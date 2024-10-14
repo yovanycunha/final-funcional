@@ -5,6 +5,7 @@ Use a lista de Haskell como estrutura sobrejacente e operações que não sejam 
 module Queue (
     Queue (..),
     add,
+    addAll,
     element,
     peek,
     remove,
@@ -19,6 +20,10 @@ data Queue a = Queue [a] deriving (Eq, Show)
 -- Insert an element in the queue
 add :: a -> Queue a -> Queue a
 add x (Queue xs) = Queue (xs ++ [x])
+
+-- Insert a list of elements in the queue
+addAll :: [a] -> Queue a -> Queue a
+addAll (xs) (Queue ys) = Queue (ys ++ xs)
 
 -- Return the first element of the queue
 element :: Queue a -> a
