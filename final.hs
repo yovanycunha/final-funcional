@@ -69,11 +69,6 @@ minimum' a
     | a == [] = error "Não há elementos maiores que x"
     | otherwise = minimum a
 
-
-
-
-
-
 {-
 5 - Um aluno é representado como uma estrutura contando matrícula,
 um primeiro nome, um sobrenome, período de ingresso e CRA.
