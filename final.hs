@@ -69,22 +69,6 @@ minimum' a
     | a == [] = error "Não há elementos maiores que x"
     | otherwise = minimum a
 
-{-
-3 - Implementar uma pilha e seus algoritmos em Haskell.
-Use a lista de Haskell como estrutura sobrejacente e operações que não sejam acesso pelo índice.
--}
--- data Stack = Stack nothing deriving (Eq, Show)
-
-
-
-{-
-4 - Implementar uma Fila e seus algoritmos em Haskell.
-Use a lista de Haskell como estrutura sobrejacente e operações que não sejam acesso pelo índice.
--}
-data Queue a = Queue [a] deriving (Eq, Show)
-
-add :: a -> Queue a -> Queue a
-add x (Queue xs) = Queue (xs ++ [x])
 
 
 
