@@ -6,13 +6,14 @@ Use a lista de Haskell como estrutura sobrejacente e operações que não sejam 
 module Stack (
     Stack (..),
     push,
-    addAll,
+    pushAll,
     peek,
     pop,
-    empty,
+    isEmpty,
     removeAll,
     search,
-    size
+    size,
+    contains
 ) where
 
 data Stack a = Stack [a] deriving (Eq, Show)
@@ -22,13 +23,13 @@ push :: a -> Stack a -> Stack a
 push x (Stack xs) = Stack (x:xs)
 
 -- Insert a list of elements in the stack
-addAll :: [a] -> Stack a -> Stack a
-addAll xs (Stack ys) = Stack (ys ++ (reverse xs))
+pushAll :: [a] -> Stack a -> Stack a
+pushAll xs (Stack ys) = Stack (reverse xs ++ ys)
 
 -- Return the first element of the stack
 peek :: Stack a -> a
 peek (Stack []) = error "Pilha vazia"
-peek (Stack (x:xs)) = x
+peek (Stack xs) = head xs 
 
 -- Remove the first element of the stack
 -- and returns a tuple with the removed
@@ -38,9 +39,9 @@ pop (Stack []) = error "Pilha vazia"
 pop (Stack (x:xs)) = (x, Stack xs)
 
 -- Check if the stack is empty
-empty :: Stack a -> Bool
-empty (Stack []) = True
-empty _ = False
+isEmpty :: Stack a -> Bool
+isEmpty (Stack []) = True
+isEmpty _ = False
 
 -- Remove all elements from the stack
 removeAll :: Stack a -> Stack a
@@ -64,3 +65,9 @@ size (Stack []) = 0
 size (Stack (x:xs))
     | null xs = 1
     | otherwise = 1 + size (Stack xs)
+
+contains :: Eq a => a -> Stack a -> Bool
+contains y (Stack []) = False
+contains y (Stack (x:xs))
+    | null xs = y == x
+    | otherwise = y == x || contains y (Stack xs)
