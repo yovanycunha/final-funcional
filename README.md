@@ -14,6 +14,9 @@
 ### Execução das implementações via `ghci`
 
 Caso deseje importar os módulos para o interpretador do Haskell os comandos são:
+
 `ghci final.hs` para importar as funções referentes a primeira e segunda questão.
+
 `ghci queue.hs` para importar as funções referentes a implementação de fila.
+
 `ghci stack.hs` para importar as funções referentes a implementação de pilha.
