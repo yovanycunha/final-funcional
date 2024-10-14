@@ -24,4 +24,6 @@ ceil:
 	ghc final.hs -e "ceil' [10, 15, 43, 65, 12, 7, -1, 2] 0"
 	ghc final.hs -e "ceil' [10, -65, -12, -7, -1, -3] (-2)"
 	ghc final.hs -e "ceil' [2, -1, 0, 12, 3, 1] 0"
+	ghc final.hs -e "ceil' [10, -20, 30, -40, -1] (-25)"
+	ghc final.hs -e "ceil' [6] 5"
 
