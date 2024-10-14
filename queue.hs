@@ -12,7 +12,7 @@ module Queue (
     isEmpty,
     removeAll,
     size,
-    contains
+    contains,
     ) where 
 
 data Queue a = Queue [a] deriving (Eq, Show)
