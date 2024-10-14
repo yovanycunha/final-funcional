@@ -36,7 +36,7 @@ peek (Stack xs) = head xs
 -- element and the new stack
 pop :: Stack a -> (a, Stack a)
 pop (Stack []) = error "Pilha vazia"
-pop (Stack (x:xs)) = (x, Stack xs)
+pop (Stack xs) = (last xs, Stack (init xs))
 
 -- Check if the stack is empty
 isEmpty :: Stack a -> Bool
