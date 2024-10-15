@@ -25,9 +25,8 @@ main = do
 
     let alunos = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10]
 
-
     let cra = foldr (\aluno acumulator -> getCra aluno + acumulator) 0 alunos
+    
+    let media = cra / fromIntegra (size alunos)
 
-    let media = cra / fromIntegral (size alunos)
-
-    putStrLn $ "Media dos CRAs: " ++ show media
+    putStrLn ("Media dos CRAs: " ++ show media)
