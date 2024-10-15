@@ -1,5 +1,12 @@
 ### O projeto possui um makefile onde podem ser executados os testes das funções implementadas.
 
+- Q1: Arquivo final.hs - método `getClosestPair`
+- Q2: Arquivo final.hs - métodos `floor'` e `ceil'` 
+- Q3: Arquivo queue.hs 
+- Q4: Arquivo stack.hs
+- Q5:
+  - a) Arquivo aluno.hs
+  - b) Arquivo alunoTest.hs  
 
 `make closestPair` é o comando responsável pelo teste da implementação da função closestPair da primeira questão.
 
@@ -10,6 +17,8 @@
 `make run queueTest` é o comando responsável pelo teste da implementação da fila.
 
 `make run stackTest` é o comando responsável pelo teste da implementação da pilha.
+
+`make mediaCra` é o comando responsável pelo teste da implementação das médias dos CRAs da lista de alunos.
 
 ### Execução das implementações via `ghci`
 
