@@ -27,3 +27,7 @@ ceil:
 	ghc final.hs -e "ceil' [10, -20, 30, -40, -1] (-25)"
 	ghc final.hs -e "ceil' [6] 5"
 
+mediaCra:
+	ghc alunoTest.hs
+	./alunoTest
+
